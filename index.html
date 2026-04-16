@@ -1,0 +1,1345 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CookNation - Forum de Cuisine</title>
+    <meta name="description" content="Rejoignez la plus grande communauté de cuisiniers. Partagez des recettes, discutez et apprenez des autres passionnés de cuisine.">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍳</text></svg>">
+</head>
+<body>
+    <button class="dark-mode-toggle" aria-label="Mode sombre">
+        <i class="fas fa-moon"></i>
+    </button>
+
+    <header>
+        <nav>
+            <div class="logo">
+                <i class="fas fa-utensils"></i>
+                <span>Cook<span class="accent">Nation</span></span>
+            </div>
+            <div class="search-bar">
+                <input type="text" placeholder="Rechercher recettes, discussions...">
+                <button><i class="fas fa-search"></i></button>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home" class="active">Accueil</a></li>
+                <li><a href="#recipes">Recettes</a></li>
+                <li><a href="#forum">Forum</a></li>
+                <li><a href="#community">Communauté</a></li>
+                <li><a href="#login" class="btn-login"><i class="fas fa-user"></i> Connexion</a></li>
+            </ul>
+            <button class="menu-toggle" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </nav>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <span class="badge fade-in"><i class="fas fa-fire"></i> Communauté de 50,000+ cuisiniers</span>
+            <h1 class="fade-in delay-1">Partagez votre passion pour la <span class="highlight">cuisine</span></h1>
+            <p class="fade-in delay-2">Rejoignez CookNation: le forum où les passionnés de cuisine se retrouvent pour échanger recettes, conseils et techniques.</p>
+            <div class="hero-buttons fade-in delay-3">
+                <a href="#register" class="btn btn-primary">Rejoindre la communauté</a>
+                <a href="#recipes" class="btn btn-outline">Découvrir les recettes</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="stats-bar">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <i class="fas fa-users"></i>
+                    <span class="stat-number" data-count="52000">0</span>
+                    <span class="stat-label">Membres</span>
+                </div>
+                <div class="stat-item">
+                    <i class="fas fa-book-open"></i>
+                    <span class="stat-number" data-count="12500">0</span>
+                    <span class="stat-label">Recettes</span>
+                </div>
+                <div class="stat-item">
+                    <i class="fas fa-comments"></i>
+                    <span class="stat-number" data-count="89000">0</span>
+                    <span class="stat-label">Discussions</span>
+                </div>
+                <div class="stat-item">
+                    <i class="fas fa-star"></i>
+                    <span class="stat-number" data-count="4500">0</span>
+                    <span class="stat-label">Recettes favorites</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="recipes" class="recipes">
+        <div class="container">
+            <div class="section-header reveal-up">
+                <span class="section-tag">Recettes populaires</span>
+                <h2>Les recettes du moment</h2>
+                <p>Découvrez les recettes les plus aimées par notre communauté cette semaine.</p>
+            </div>
+            <div class="recipe-filters reveal-up">
+                <button class="filter-btn active" data-filter="all">Toutes</button>
+                <button class="filter-btn" data-filter="entree">Entrées</button>
+                <button class="filter-btn" data-filter="plat">Plats principaux</button>
+                <button class="filter-btn" data-filter="dessert">Desserts</button>
+                <button class="filter-btn" data-filter="boisson">Boissons</button>
+            </div>
+            <div class="recipes-grid">
+                <article class="recipe-card reveal-up delay-1" data-category="plat">
+                    <div class="recipe-image" style="background: url('https://images.unsplash.com/photo-1598103442097-8b74394b95c6?w=400&h=300&fit=crop') center/cover;">
+                        <span class="recipe-time"><i class="fas fa-clock"></i> 45 min</span>
+                        <span class="recipe-difficulty intermediate">Intermédiaire</span>
+                    </div>
+                    <div class="recipe-content">
+                        <div class="recipe-meta">
+                            <span class="category">Plats principaux</span>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                                <span>4.8</span>
+                            </div>
+                        </div>
+                        <h3>Poulet rôti aux herbes</h3>
+                        <p>Poulet croustillant avec thym, romarin et légumes rôtis.</p>
+                        <div class="recipe-footer">
+                            <div class="author">
+                                <div class="author-avatar">MC</div>
+                                <span>Marie C.</span>
+                            </div>
+                            <div class="recipe-actions">
+                                <button class="recipe-btn" onclick="openRecipeModal('poulet')">
+                                    <i class="fas fa-book-open"></i> Voir
+                                </button>
+                                <button class="like-btn"><i class="far fa-heart"></i> 245</button>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+                <article class="recipe-card reveal-up delay-2" data-category="dessert">
+                    <div class="recipe-image" style="background: url('https://images.unsplash.com/photo-1606313564200-e75d5e30476c?w=400&h=300&fit=crop') center/cover;">
+                        <span class="recipe-time"><i class="fas fa-clock"></i> 40 min</span>
+                        <span class="recipe-difficulty intermediate">Intermédiaire</span>
+                    </div>
+                    <div class="recipe-content">
+                        <div class="recipe-meta">
+                            <span class="category">Desserts</span>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <span>5.0</span>
+                            </div>
+                        </div>
+                        <h3>Fondant au chocolat</h3>
+                        <p>Gâteau au cœur coulant de chocolat noir超好吃.</p>
+                        <div class="recipe-footer">
+                            <div class="author">
+                                <div class="author-avatar">JL</div>
+                                <span>Jean L.</span>
+                            </div>
+                            <div class="recipe-actions">
+                                <button class="recipe-btn" onclick="openRecipeModal('fondant')">
+                                    <i class="fas fa-book-open"></i> Voir
+                                </button>
+                                <button class="like-btn"><i class="far fa-heart"></i> 389</button>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+                <article class="recipe-card reveal-up delay-3" data-category="entree">
+                    <div class="recipe-image" style="background: url('https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?w=400&h=300&fit=crop') center/cover;">
+                        <span class="recipe-time"><i class="fas fa-clock"></i> 15 min</span>
+                        <span class="recipe-difficulty easy">Facile</span>
+                    </div>
+                    <div class="recipe-content">
+                        <div class="recipe-meta">
+                            <span class="category">Entrées</span>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <span>4.2</span>
+                            </div>
+                        </div>
+                        <h3>Salade grecque authentique</h3>
+                        <p>Tomates, concombres, olives feta et olive oil.</p>
+                        <div class="recipe-footer">
+                            <div class="author">
+                                <div class="author-avatar">NK</div>
+                                <span>Nikos K.</span>
+                            </div>
+                            <div class="recipe-actions">
+                                <button class="recipe-btn" onclick="openRecipeModal('saladegrecque')">
+                                    <i class="fas fa-book-open"></i> Voir
+                                </button>
+                                <button class="like-btn"><i class="far fa-heart"></i> 178</button>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+                <article class="recipe-card reveal-up delay-4" data-category="plat">
+                    <div class="recipe-image" style="background: url('https://images.unsplash.com/photo-1467003909585-2f8a72700288?w=400&h=300&fit=crop') center/cover;">
+                        <span class="recipe-time"><i class="fas fa-clock"></i> 35 min</span>
+                        <span class="recipe-difficulty intermediate">Intermédiaire</span>
+                    </div>
+                    <div class="recipe-content">
+                        <div class="recipe-meta">
+                            <span class="category">Plats principaux</span>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                                <span>4.7</span>
+                            </div>
+                        </div>
+                        <h3>Saumon grillé à la crème</h3>
+                        <p>Saumon avec sauce crémeuse aux câpres et citron.</p>
+                        <div class="recipe-footer">
+                            <div class="author">
+                                <div class="author-avatar">SB</div>
+                                <span>Sophie B.</span>
+                            </div>
+                            <div class="recipe-actions">
+                                <button class="recipe-btn" onclick="openRecipeModal('saumon')">
+                                    <i class="fas fa-book-open"></i> Voir
+                                </button>
+                                <button class="like-btn"><i class="far fa-heart"></i> 312</button>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+                <article class="recipe-card reveal-up delay-1" data-category="dessert">
+                    <div class="recipe-image" style="background: url('https://images.unsplash.com/photo-1571877227200-a0d98ea607e9?w=400&h=300&fit=crop') center/cover;">
+                        <span class="recipe-time"><i class="fas fa-clock"></i> 30 min</span>
+                        <span class="recipe-difficulty easy">Facile</span>
+                    </div>
+                    <div class="recipe-content">
+                        <div class="recipe-meta">
+                            <span class="category">Desserts</span>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <span>4.9</span>
+                            </div>
+                        </div>
+                        <h3>Tiramisu italiano</h3>
+                        <p>Dessert italien crémeux au café et mascarpone.</p>
+                        <div class="recipe-footer">
+                            <div class="author">
+                                <div class="author-avatar">AR</div>
+                                <span>Anna R.</span>
+                            </div>
+                            <div class="recipe-actions">
+                                <button class="recipe-btn" onclick="openRecipeModal('tiramisu')">
+                                    <i class="fas fa-book-open"></i> Voir
+                                </button>
+                                <button class="like-btn"><i class="far fa-heart"></i> 456</button>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+                <article class="recipe-card reveal-up delay-2" data-category="boisson">
+                    <div class="recipe-image" style="background: url('https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?w=400&h=300&fit=crop') center/cover;">
+                        <span class="recipe-time"><i class="fas fa-clock"></i> 10 min</span>
+                        <span class="recipe-difficulty easy">Facile</span>
+                    </div>
+                    <div class="recipe-content">
+                        <div class="recipe-meta">
+                            <span class="category">Boissons</span>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <span>4.3</span>
+                            </div>
+                        </div>
+                        <h3>Mojito rafraîchissant</h3>
+                        <p>Cocktail cubain avec menthe thérapeutische et citron vert.</p>
+                        <div class="recipe-footer">
+                            <div class="author">
+                                <div class="author-avatar">PM</div>
+                                <span>Pierre M.</span>
+                            </div>
+                            <div class="recipe-actions">
+                                <button class="recipe-btn" onclick="openRecipeModal('mojito')">
+                                    <i class="fas fa-book-open"></i> Voir
+                                </button>
+                                <button class="like-btn"><i class="far fa-heart"></i> 201</button>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+                <article class="recipe-card reveal-up delay-3" data-category="plat">
+                    <div class="recipe-image" style="background: url('https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=400&h=300&fit=crop') center/cover;">
+                        <span class="recipe-time"><i class="fas fa-clock"></i> 50 min</span>
+                        <span class="recipe-difficulty hard">Difficile</span>
+                    </div>
+                    <div class="recipe-content">
+                        <div class="recipe-meta">
+                            <span class="category">Plats principaux</span>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <span>4.9</span>
+                            </div>
+                        </div>
+                        <h3>Pizza napolitaine</h3>
+                        <p>Pizza artisanale avec mozzarella di bufala et basilic frais.</p>
+                        <div class="recipe-footer">
+                            <div class="author">
+                                <div class="author-avatar">LM</div>
+                                <span>Luca M.</span>
+                            </div>
+                            <div class="recipe-actions">
+                                <button class="recipe-btn" onclick="openRecipeModal('pizza')">
+                                    <i class="fas fa-book-open"></i> Voir
+                                </button>
+                                <button class="like-btn"><i class="far fa-heart"></i> 567</button>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+                <article class="recipe-card reveal-up delay-4" data-category="plat">
+                    <div class="recipe-image" style="background: url('https://images.unsplash.com/photo-1589302168068-964664d93dc0?w=400&h=300&fit=crop') center/cover;">
+                        <span class="recipe-time"><i class="fas fa-clock"></i> 60 min</span>
+                        <span class="recipe-difficulty intermediate">Intermédiaire</span>
+                    </div>
+                    <div class="recipe-content">
+                        <div class="recipe-meta">
+                            <span class="category">Plats principaux</span>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                                <span>4.6</span>
+                            </div>
+                        </div>
+                        <h3>Tajine Marocain</h3>
+                        <p>Tajine aux pruneaux, amandes et kan onfitures.</p>
+                        <div class="recipe-footer">
+                            <div class="author">
+                                <div class="author-avatar">FH</div>
+                                <span>Fatima H.</span>
+                            </div>
+                            <div class="recipe-actions">
+                                <button class="recipe-btn" onclick="openRecipeModal('tajine')">
+                                    <i class="fas fa-book-open"></i> Voir
+                                </button>
+                                <button class="like-btn"><i class="far fa-heart"></i> 423</button>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+                <article class="recipe-card reveal-up delay-1" data-category="dessert">
+                    <div class="recipe-image" style="background: url('https://images.unsplash.com/photo-1563729784474-d77dbb933a9e?w=400&h=300&fit=crop') center/cover;">
+                        <span class="recipe-time"><i class="fas fa-clock"></i> 25 min</span>
+                        <span class="recipe-difficulty easy">Facile</span>
+                    </div>
+                    <div class="recipe-content">
+                        <div class="recipe-meta">
+                            <span class="category">Desserts</span>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <span>4.8</span>
+                            </div>
+                        </div>
+                        <h3>Cheesecake NY</h3>
+                        <p>Gâteau au fromage new-yorkais crémeux et onctueux.</p>
+                        <div class="recipe-footer">
+                            <div class="author">
+                                <div class="author-avatar">EW</div>
+                                <span>Emma W.</span>
+                            </div>
+                            <div class="recipe-actions">
+                                <button class="recipe-btn" onclick="openRecipeModal('cheesecake')">
+                                    <i class="fas fa-book-open"></i> Voir
+                                </button>
+                                <button class="like-btn"><i class="far fa-heart"></i> 334</button>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+                <article class="recipe-card reveal-up delay-2" data-category="entree">
+                    <div class="recipe-image" style="background: url('https://images.unsplash.com/photo-1626645738196-c2a72c7d8e70?w=400&h=300&fit=crop') center/cover;">
+                        <span class="recipe-time"><i class="fas fa-clock"></i> 30 min</span>
+                        <span class="recipe-difficulty intermediate">Intermédiaire</span>
+                    </div>
+                    <div class="recipe-content">
+                        <div class="recipe-meta">
+                            <span class="category">Entrées</span>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                                <span>4.5</span>
+                            </div>
+                        </div>
+                        <h3>Bruschetta italiana</h3>
+                        <p>Pain grillé avec tomates, ail et basilic frais.</p>
+                        <div class="recipe-footer">
+                            <div class="author">
+                                <div class="author-avatar">RP</div>
+                                <span>Roberto P.</span>
+                            </div>
+                            <div class="recipe-actions">
+                                <button class="recipe-btn" onclick="openRecipeModal('bruschetta')">
+                                    <i class="fas fa-book-open"></i> Voir
+                                </button>
+                                <button class="like-btn"><i class="far fa-heart"></i> 189</button>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+                <article class="recipe-card reveal-up delay-3" data-category="plat">
+                    <div class="recipe-image" style="background: url('https://images.unsplash.com/photo-1551183053-bf91a1d81141?w=400&h=300&fit=crop') center/cover;">
+                        <span class="recipe-time"><i class="fas fa-clock"></i> 40 min</span>
+                        <span class="recipe-difficulty intermediate">Intermédiaire</span>
+                    </div>
+                    <div class="recipe-content">
+                        <div class="recipe-meta">
+                            <span class="category">Plats principaux</span>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <span>4.9</span>
+                            </div>
+                        </div>
+                        <h3>Risotto aux champignons</h3>
+                        <p>Risotto crémeux avec chanterelles et parmesan.</p>
+                        <div class="recipe-footer">
+                            <div class="author">
+                                <div class="author-avatar">GM</div>
+                                <span>Giovanni M.</span>
+                            </div>
+                            <div class="recipe-actions">
+                                <button class="recipe-btn" onclick="openRecipeModal('risotto')">
+                                    <i class="fas fa-book-open"></i> Voir
+                                </button>
+                                <button class="like-btn"><i class="far fa-heart"></i> 298</button>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+                <article class="recipe-card reveal-up delay-4" data-category="boisson">
+                    <div class="recipe-image" style="background: url('https://images.unsplash.com/photo-1544145945-f90425340c7e?w=400&h=300&fit=crop') center/cover;">
+                        <span class="recipe-time"><i class="fas fa-clock"></i> 5 min</span>
+                        <span class="recipe-difficulty easy">Facile</span>
+                    </div>
+                    <div class="recipe-content">
+                        <div class="recipe-meta">
+                            <span class="category">Boissons</span>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <span>4.7</span>
+                            </div>
+                        </div>
+                        <h3>Smoothie detox</h3>
+                        <p>Boisson rafraîchissante aux fruits rouges et épinards.</p>
+                        <div class="recipe-footer">
+                            <div class="author">
+                                <div class="author-avatar">CB</div>
+                                <span>Claire B.</span>
+                            </div>
+                            <div class="recipe-actions">
+                                <button class="recipe-btn" onclick="openRecipeModal('smoothie')">
+                                    <i class="fas fa-book-open"></i> Voir
+                                </button>
+                                <button class="like-btn"><i class="far fa-heart"></i> 167</button>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section id="forum" class="forum">
+        <div class="container">
+            <div class="section-header reveal-up">
+                <span class="section-tag">Forum de discussion</span>
+                <h2>Dernières discussions</h2>
+                <p>Échangez avec la communauté sur vos sujets culinaire préférés.</p>
+            </div>
+            <div class="forum-categories reveal-up">
+                <div class="category-card">
+                    <div class="category-icon"><i class="fas fa-knife"></i></div>
+                    <div class="category-info">
+                        <h4>Techniques de cuisine</h4>
+                        <p>Conseils et astuces pour maîtriser les bases</p>
+                        <span class="topic-count"><i class="fas fa-comments"></i> 2,450 sujets</span>
+                    </div>
+                </div>
+                <div class="category-card">
+                    <div class="category-icon"><i class="fas fa-carrot"></i></div>
+                    <div class="category-info">
+                        <h4>Ingrédients & courses</h4>
+                        <p>Où trouver les meilleurs produits</p>
+                        <span class="topic-count"><i class="fas fa-comments"></i> 1,890 sujets</span>
+                    </div>
+                </div>
+                <div class="category-card">
+                    <div class="category-icon"><i class="fas fa-camera"></i></div>
+                    <div class="category-info">
+                        <h4>Presentation & photos</h4>
+                        <p>Astuces pour sublimer vos plats</p>
+                        <span class="topic-count"><i class="fas fa-comments"></i> 980 sujets</span>
+                    </div>
+                </div>
+                <div class="category-card">
+                    <div class="category-icon"><i class="fas fa-bread-slice"></i></div>
+                    <div class="category-info">
+                        <h4>Pain & boulangerie</h4>
+                        <p>Tout sur la fabrication du pain</p>
+                        <span class="topic-count"><i class="fas fa-comments"></i> 1,670 sujets</span>
+                    </div>
+                </div>
+            </div>
+            <div class="recent-threads">
+                <h3><i class="fas fa-clock"></i> Sujets récents</h3>
+                <div class="thread-list">
+                    <div class="thread-item reveal-up">
+                        <div class="thread-avatar">AH</div>
+                        <div class="thread-content">
+                            <h4>Comment réussir sa pâte à pizza?</h4>
+                            <p>Je cherche des conseils pour une pâte bien croustillante...</p>
+                            <div class="thread-meta">
+                                <span><i class="fas fa-user"></i> Ahmed H.</span>
+                                <span><i class="fas fa-clock"></i> Il y a 2h</span>
+                                <span><i class="fas fa-comment"></i> 24 réponses</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="thread-item reveal-up">
+                        <div class="thread-avatar">LF</div>
+                        <div class="thread-content">
+                            <h4>RecetteTagine Marocain authentique</h4>
+                            <p>Partage de ma recette de tajine aux pruneaux et amandes...</p>
+                            <div class="thread-meta">
+                                <span><i class="fas fa-user"></i> Leila F.</span>
+                                <span><i class="fas fa-clock"></i> Il y a 5h</span>
+                                <span><i class="fas fa-comment"></i> 56 réponses</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="thread-item reveal-up">
+                        <div class="thread-avatar">MB</div>
+                        <div class="thread-content">
+                            <h4>Quel robot cuiseur choisir en 2026?</h4>
+                            <p>Comparatif entre Thermomix, Cookéo et autres...</p>
+                            <div class="thread-meta">
+                                <span><i class="fas fa-user"></i> Michel B.</span>
+                                <span><i class="fas fa-clock"></i> Il y a 8h</span>
+                                <span><i class="fas fa-comment"></i> 89 réponses</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="thread-item reveal-up">
+                        <div class="thread-avatar">CD</div>
+                        <div class="thread-content">
+                            <h4>Conservation des aliments: les règles à savoir</h4>
+                            <p>Guide complet pour bien conserver vos preparations...</p>
+                            <div class="thread-meta">
+                                <span><i class="fas fa-user"></i> Claire D.</span>
+                                <span><i class="fas fa-clock"></i> Il y a 12h</span>
+                                <span><i class="fas fa-comment"></i> 34 réponses</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="community" class="community">
+        <div class="container">
+            <div class="section-header reveal-up">
+                <span class="section-tag">Top membres</span>
+                <h2>Chefs en vedette</h2>
+                <p>Découvrez les membres les plus actifs de notre communauté.</p>
+            </div>
+            <div class="members-grid">
+                <div class="member-card reveal-up delay-1">
+                    <div class="member-badge gold"><i class="fas fa-crown"></i></div>
+                    <div class="member-avatar">
+                        <span>MC</span>
+                    </div>
+                    <h4>Marie Cuisine</h4>
+                    <p class="member-title">Chef Professionnel</p>
+                    <div class="member-stats">
+                        <span><i class="fas fa-book"></i> 245 recettes</span>
+                        <span><i class="fas fa-heart"></i> 12.5k</span>
+                    </div>
+                    <button class="btn-follow">Suivre</button>
+                </div>
+                <div class="member-card reveal-up delay-2">
+                    <div class="member-badge silver"><i class="fas fa-crown"></i></div>
+                    <div class="member-avatar">
+                        <span>JL</span>
+                    </div>
+                    <h4>Jean Pâtissier</h4>
+                    <p class="member-title">Passionné de desserts</p>
+                    <div class="member-stats">
+                        <span><i class="fas fa-book"></i> 189 recettes</span>
+                        <span><i class="fas fa-heart"></i> 8.2k</span>
+                    </div>
+                    <button class="btn-follow">Suivre</button>
+                </div>
+                <div class="member-card reveal-up delay-3">
+                    <div class="member-badge bronze"><i class="fas fa-crown"></i></div>
+                    <div class="member-avatar">
+                        <span>SB</span>
+                    </div>
+                    <h4>Sophie Bio</h4>
+                    <p class="member-title">Cuisine healthy</p>
+                    <div class="member-stats">
+                        <span><i class="fas fa-book"></i> 156 recettes</span>
+                        <span><i class="fas fa-heart"></i> 6.8k</span>
+                    </div>
+                    <button class="btn-follow">Suivre</button>
+                </div>
+                <div class="member-card reveal-up delay-4">
+                    <div class="member-avatar">
+                        <span>NK</span>
+                    </div>
+                    <h4>Nikos Chef</h4>
+                    <p class="member-title">Cuisine grecque</p>
+                    <div class="member-stats">
+                        <span><i class="fas fa-book"></i> 134 recettes</span>
+                        <span><i class="fas fa-heart"></i> 5.1k</span>
+                    </div>
+                    <button class="btn-follow">Suivre</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="register" class="cta-section">
+        <div class="container">
+            <div class="cta-content reveal-up">
+                <h2>Rejoignez CookNation!</h2>
+                <p>Créez votre compte gratuitement et partagez votre passion pour la cuisine avec des milliers de passionnés.</p>
+                <form class="register-form">
+                    <input type="text" placeholder="Votre pseudo">
+                    <input type="email" placeholder="Votre email">
+                    <input type="password" placeholder="Mot de passe">
+                    <button type="submit" class="btn btn-primary">Créer mon compte</button>
+                </form>
+                <p class="login-link">Déjà membre? <a href="#login">Se connecter</a></p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="logo">
+                        <i class="fas fa-utensils"></i>
+                        <span>Cook<span class="accent">Nation</span></span>
+                    </div>
+                    <p>La plus grande communauté de cuisiniers francophones. Partagez, apprenez et culinaryez ensemble!</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Navigation</h4>
+                    <ul>
+                        <li><a href="#home">Accueil</a></li>
+                        <li><a href="#recipes">Recettes</a></li>
+                        <li><a href="#forum">Forum</a></li>
+                        <li><a href="#community">Communauté</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Catégories</h4>
+                    <ul>
+                        <li><a href="#">Entrées</a></li>
+                        <li><a href="#">Plats</a></li>
+                        <li><a href="#">Desserts</a></li>
+                        <li><a href="#">Boissons</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="#">Aide</a></li>
+                        <li><a href="#">Règles du forum</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 CookNation. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <div id="recipeModal" class="modal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal()">&times;</button>
+            <div class="modal-body-content"></div>
+        </div>
+    </div>
+
+    <script>
+        const recipes = {
+            poulet: {
+                title: "Poulet rôti aux herbes",
+                image: "https://images.unsplash.com/photo-1598103442097-8b74394b95c6?w=800&h=400&fit=crop",
+                time: "45 min",
+                difficulty: "Intermédiaire",
+                servings: "4 personnes",
+                author: "Marie C.",
+                rating: "4.8",
+                likes: 245,
+                description: "Un poulet rôti croustillant avec un mélange parfumé de thym, romarin et lavande. Parfait pour un dimanche en famille.",
+                ingredients: [
+                    "1 poulet entier (1.5 kg)",
+                    "4 cs d'huile d'olive",
+                    "3 branches de thym frais",
+                    "2 branches de romarin",
+                    "1 tête d'ail coupée en deux",
+                    "1 citron",
+                    "Sel et poivre noir",
+                    "30g de beurre"
+                ],
+                steps: [
+                    "Préchauffez le four à 200°C (th. 7).",
+                    "Séchez le poulet avec du papier absorbant.",
+                    "Frottez le poulet avec l'huile d'olive, le sel et le poivre.",
+                    "Placez les herbes et l'ail à l'intérieur du poulet.",
+                    "Badigeonnez de beurre ramolli.",
+                    "Placez le poulet dans un plat et enfournez 45 min.",
+                    "Retournez à mi-cuisson et arrosez de jus.",
+                    "Laissez reposer 10 min avant de servir."
+                ],
+                tips: [
+                    "Pour une peau plus croustillante, badigeonnez de beurre 15 min avant la fin.",
+                    "Vérifiez la cuisson avec un thermomètre: 74°C au cœur.",
+                    "Servez avec des légumes rôtis ou des pommes de terre."
+                ]
+            },
+            fondant: {
+                title: "Fondant au chocolat",
+                image: "https://images.unsplash.com/photo-1606313564200-e75d5e30476c?w=800&h=400&fit=crop",
+                time: "40 min",
+                difficulty: "Intermédiaire",
+                servings: "6 personnes",
+                author: "Jean L.",
+                rating: "5.0",
+                likes: 389,
+                description: "Le dessert incontourn pour les amateurs de chocolat. Un cœur coulant fondant qui ravira tous les palais.",
+                ingredients: [
+                    "200g de chocolat noir",
+                    "100g de beurre",
+                    "100g de sucre",
+                    "3 œufs + 3 jaunes",
+                    "50g de farine",
+                    "1 pointe de sel",
+                    "Sucre glace pour saupoudrer"
+                ],
+                steps: [
+                    "Préchauffez le four à 220°C (th. 8).",
+                    "Faites fondre chocolat et beurre au bain-marie.",
+                    "Fouettez les œufs avec le sucre jusqu'à blanchiment.",
+                    "Incorporez le mélange chocolat aux œufs.",
+                    "Ajoutez la farine et le sel, mélbez bien.",
+                    "Beurrez et farinez 6 ramequins.",
+                    "Répartissez la pâte et enfournez 12-14 min.",
+                    "Démoulez sofort et saupoudrez de sucre glace."
+                ],
+                tips: [
+                    "Ne dépassez pas le temps de cuisson pour garder le cœur coulant.",
+                    "Vous pouvez préparer à l'avance et réchauffez 8 min.",
+                    "Servez avec une boule de glace à la vanille."
+                ]
+            },
+            saladegrecque: {
+                title: "Salade grecque authentique",
+                image: "https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?w=800&h=400&fit=crop",
+                time: "15 min",
+                difficulty: "Facile",
+                servings: "4 personnes",
+                author: "Nikos K.",
+                rating: "4.2",
+                likes: 178,
+                description: "La saladе grecque traditionnelle avec des ingrédients frais et unauthentique vinaigrette maison.",
+                ingredients: [
+                    "4 tomates moyennes",
+                    "1 concombre",
+                    "1 oignon rouge",
+                    "200g de feta",
+                    "100g d'olives Kalamata",
+                    "4 cs d'huile d'olive",
+                    "1 cs de vinaigre de vin",
+                    "Origan sec, sel, poivre"
+                ],
+                steps: [
+                    "Lavez et coupez les tomates en quartiers.",
+                    "Coupez le concombre en rondelles épaisses.",
+                    "émincez l'oignon rouge finement.",
+                    "Placez les légumes dans un grand bol.",
+                    "Ajoutez les olives et la feta en cubes.",
+                    "Mélangez l'huile avec le vinaigre.",
+                    "Assaisonnez et saupoudrez d'origan.",
+                    "Servez immédiatement."
+                ],
+                tips: [
+                    "Utilisez une feta de qualité supérieure.",
+                    "L'oignon rouge ajoute une touche de couleur.",
+                    "Réservez au frais 30 min pour plus de fraîcheur."
+                ]
+            },
+            saumon: {
+                title: "Saumon grillé à la crème",
+                image: "https://images.unsplash.com/photo-1467003909585-2f8a72700288?w=800&h=400&fit=crop",
+                time: "35 min",
+                difficulty: "Intermédiaire",
+                servings: "2 personnes",
+                author: "Sophie B.",
+                rating: "4.7",
+                likes: 312,
+                description: "Un saumon parfaitement grillé accompagné d'une sauce crémeuse aux câpres et citron.",
+                ingredients: [
+                    "2 pavés de saumon (150g chacun)",
+                    "20cl de crème fraîche",
+                    "2 cs de câpres",
+                    "1 citron",
+                    "2 cs d'aneth frais",
+                    "Beurre",
+                    "Sel et poivre"
+                ],
+                steps: [
+                    "Salez et poivrez les pavés de saumon.",
+                    "Faites fondre une noisette de beurre dans une poêle.",
+                    "Saisissez le saumon 4 min de chaque côté.",
+                    "Retirez le saumon et gardez au chaud.",
+                    "Dans la même poêle, ajoutez la crème et les câpres.",
+                    "Laissez réduire 3 min à feu moyen.",
+                    "Ajoutez le jus de citron et l'aneth.",
+                    "Nappez le saumon avec la sauce."
+                ],
+                tips: [
+                    "Ne incontourn pas le saumon pour éviter qu'il ne soit sec.",
+                    "La sauce peut être préparée à l'avance.",
+                    "Servez avec du riz ou des asperges."
+                ]
+            },
+            tiramisu: {
+                title: "Tiramisu italiano",
+                image: "https://images.unsplash.com/photo-1571877227200-a0d98ea607e9?w=800&h=400&fit=crop",
+                time: "30 min",
+                difficulty: "Facile",
+                servings: "8 personnes",
+                author: "Anna R.",
+                rating: "4.9",
+                likes: 456,
+                description: "Le dessert italien par excellence, crémeux et délicat, avec son goût irremplaçable de café et mascarpone.",
+                ingredients: [
+                    "500g de mascarpone",
+                    "4 œufs",
+                    "100g de sucre",
+                    "300ml de café fort refroidi",
+                    "200g de biscuits boudoirs",
+                    "2 cs de cacao amer",
+                    "1 cs de Marsala (optionnel)"
+                ],
+                steps: [
+                    "Séparez les blancs des jaunes d'œufs.",
+                    "Fouettez les jaunes avec le sucre jusqu'à obtenir un mélange crémeux.",
+                    "Incorporez le mascarpone délicatement.",
+                    "Montez les blancs en neige et incorporez.",
+                    "Trempez rapidement les biscuits dans le café.",
+                    "Disposez une couche de biscuits dans un plat.",
+                    "Couvrez de crème et répétez.",
+                    "Réservez 4h au réfrigérateur et saupoudrez de cacao."
+                ],
+                tips: [
+                    "Le café doit être bien refroidi.",
+                    "Ne trempez pas trop les biscuits sinon ils devient détrempés.",
+                    "Préparez la veille pour un meilleur goût."
+                ]
+            },
+            mojito: {
+                title: "Mojito rafraîchissant",
+                image: "https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?w=800&h=400&fit=crop",
+                time: "10 min",
+                difficulty: "Facile",
+                servings: "1 verre",
+                author: "Pierre M.",
+                rating: "4.3",
+                likes: 201,
+                description: "Le cocktail cubain классический avec menthe thérapeutische fraîche, idéal pour les journées chaudes.",
+                ingredients: [
+                    "6 feuilles de menthe fraîche",
+                    "1 citron vert",
+                    "2 cs de sucre de cane",
+                    "60ml de rhum blanc",
+                    "Eau gazeuse",
+                    "Glaçons"
+                ],
+                steps: [
+                    "Écrasez légèrement les feuilles de menthe au mortier.",
+                    "Coupez le citron en quartiers et ajoutez.",
+                    "Ajoutez le sucre et écrasеz pour libérer le jus.",
+                    "Versez le rhum et mélbez bien.",
+                    "Ajoutez les glaçons.",
+                    "Complétez avec l'eau gazeuse.",
+                    "Mélangez doucement et décorez de menthe."
+                ],
+                tips: [
+                    "Utilisez de la menthe thérapeutische pour un meilleur arôme.",
+                    "Ne pas shook mais mélanger doucement.",
+                    "Remplacez le sucre par du sirop d'agave pour une version light."
+                ]
+            },
+            pizza: {
+                title: "Pizza napolitaine",
+                image: "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=800&h=400&fit=crop",
+                time: "50 min",
+                difficulty: "Difficile",
+                servings: "2 pizzas",
+                author: "Luca M.",
+                rating: "4.9",
+                likes: 567,
+                description: "L'authentique pizza napolitaine avec mozzarella di bufala et basilic frais sur une pâte faite maison.",
+                ingredients: [
+                    "300g de farine T00",
+                    "200ml d'eau tièide",
+                    "10g de sel",
+                    "5g de levure fraîche",
+                    "400g de tomates San Marzano",
+                    "250g de mozzarella di bufala",
+                    "Basilic frais",
+                    "Huile d'olive extra virgin"
+                ],
+                steps: [
+                    "Délayez la levure dans l'eau tiède.",
+                    "Mélangez la farine avec le sel, ajoutez le mélange eau/levure.",
+                    "Pétrissez 10 min jusqu'à obtenir une pâte élastique.",
+                    "Laissez lever 2h sous torchon.",
+                    "Étalez la pâte en ovale (style napolitain).",
+                    "Écrasez les tomates et étalez.",
+                    "Ajoutez la mozzarella en cubes.",
+                    "Cuire 8-10 min à 250°C et ajoutez le basilic."
+                ],
+                tips: [
+                    "La température de levée est importante: ambiante et sans courants d'air.",
+                    "Utilisez une pierre à pizza si possible.",
+                    "La mozzarella di bufala est irremplaçable!"
+                ]
+            },
+            tajine: {
+                title: "Tajine Marocain",
+                image: "https://images.unsplash.com/photo-1589302168068-964664d93dc0?w=800&h=400&fit=crop",
+                time: "60 min",
+                difficulty: "Intermédiaire",
+                servings: "6 personnes",
+                author: "Fatima H.",
+                rating: "4.6",
+                likes: 423,
+                description: "Le traditionnel tajine aux pruneaux et amandes, un classique de la cuisine marocaine authentique.",
+                ingredients: [
+                    "1kg de côtelettes d'agneau",
+                    "200g de pruneaux",
+                    "100g d'amandes grillées",
+                    "2 oignons",
+                    "1 cc de cannelle",
+                    "1 cc de Gingembre",
+                    "1 cs de miel",
+                    "Eau, huile, sel, poivre"
+                ],
+                steps: [
+                    "Faites revenir les côtelettes dans l'huile.",
+                    "Ajoutez les oignons hachés et laissez dorer.",
+                    "Versez enough d'eau pour couvrir.",
+                    "Ajoutez les épices et laissez mijoter 30 min.",
+                    "Ajoutez les pruneaux et laissez mijoter 20 min.",
+                    "Incorporez le miel en fin de cuisson.",
+                    "Servez décoré d'amandes grillées.",
+                    "Accompagnez de semoule parfumée."
+                ],
+                tips: [
+                    "Le tajine doit mijoter à feu doux.",
+                    "Vous pouvez remplacer l'agneau par du poulet.",
+                    "La vraie sauce doit être onctueuse mais pas épaisse."
+                ]
+            },
+            cheesecake: {
+                title: "Cheesecake NY",
+                image: "https://images.unsplash.com/photo-1563729784474-d77dbb933a9e?w=800&h=400&fit=crop",
+                time: "25 min",
+                difficulty: "Facile",
+                servings: "10 parts",
+                author: "Emma W.",
+                rating: "4.8",
+                likes: 334,
+                description: "Le gâteau au fromage new-yorkais crémeux et onctueux, avec une croûte de biscuits digestive.",
+                ingredients: [
+                    "300g de biscuits digestive",
+                    "80g de beurre fondu",
+                    "900g de cream cheese",
+                    "200g de sucre",
+                    "4 œufs",
+                    "200ml de crème fraîche",
+                    "1 cs d'extrait de vanille",
+                    "Zeste de citron"
+                ],
+                steps: [
+                    "Écrasez les biscuits et mélangeż avec le beurre.",
+                    "Tassez dans un moule à charnière de 24cm.",
+                    "Fouettez le cream cheese jusqu'à crémeux.",
+                    "Ajoutez le sucre puis les œufs un par un.",
+                    "Incorporez la crème et la vanille.",
+                    "Versez sur la croûte.",
+                    "Cuire 55 min à 160°C puis laissez refroidir 2h.",
+                    "Réservez au réfrigérateur 4h avant de démouler."
+                ],
+                tips: [
+                    "Tous les ingrédients doivent être à température ambiante.",
+                    "Ne pas ouvrir le four pendant la cuisson.",
+                    "Servez avec une sauce aux fruits rouges."
+                ]
+            },
+            bruschetta: {
+                title: "Bruschetta italiana",
+                image: "https://images.unsplash.com/photo-1626645738196-c2a72c7d8e70?w=800&h=400&fit=crop",
+                time: "30 min",
+                difficulty: "Intermédiaire",
+                servings: "4 personnes",
+                author: "Roberto P.",
+                rating: "4.5",
+                likes: 189,
+                description: "L classics bruschetta italiana avec tomates fraîches, ail et basilic sur pain grillé.",
+                ingredients: [
+                    "4 tranches de pain casalingo",
+                    "4 tomates matures",
+                    "2 gousses d'ail",
+                    "Feuilles de basilic frais",
+                    "3 cs d'huile d'olive",
+                    "Sel et poivre",
+                    "Vinaigre balsamique"
+                ],
+                steps: [
+                    "Coupez les tomates en dés.",
+                    "Hâchez finement l'ail et le basilic.",
+                    "Mélangez les tomates avec l'ail, le basilic et l'huile.",
+                    "Salez et poivrez, laissez reposer 15 min.",
+                    "Grillez le pain jusqu'à doré.",
+                    "Frottez le pain avec une gousse d'ail.",
+                    "Disposition les tomates grillées.",
+                    "Arrosez d'un filet de balsamique et servez."
+                ],
+                tips: [
+                    "Utilisez un pain rustique italien.",
+                    "Les tomates doivent être bien mûres et juteuses.",
+                    "Servez immédiatement pour garder le croquant."
+                ]
+            },
+            risotto: {
+                title: "Risotto aux champignons",
+                image: "https://images.unsplash.com/photo-1551183053-bf91a1d81141?w=800&h=400&fit=crop",
+                time: "40 min",
+                difficulty: "Intermédiaire",
+                servings: "4 personnes",
+                author: "Giovanni M.",
+                rating: "4.9",
+                likes: 298,
+                description: "Un risotto crémeux et parfumé avec des chanterelles et du parmesan frais.",
+                ingredients: [
+                    "300g de riz arborio",
+                    "300g de chanterelles",
+                    "1 oignon",
+                    "1L de bouillon de légumes",
+                    "100ml de vin blanc sec",
+                    "80g de parmesan râpé",
+                    "50g de beurre",
+                    "Thym, sel, poivre"
+                ],
+                steps: [
+                    "Chauffez le bouillon et gardez au chaud.",
+                    "Faites revenir l'oignon dans le beurre.",
+                    "Ajoutez les chanterelles et cuisson 5 min.",
+                    "Incorporez le riz et touiller 2 min.",
+                    "Versez le vin blanc et laissez absorber.",
+                    "Ajoutez le bouillon louche par louche en touillant.",
+                    "Après 18 min, incorporez le parmesan.",
+                    "Servez sofort avec du thym frais."
+                ],
+                tips: [
+                    "Le riz ne doit pas être rincé.",
+                    "Le secret est d'ajouter le bouillon progressivement.",
+                    "Utilisez un хороший parmesan pour un meilleur goût."
+                ]
+            },
+            smoothie: {
+                title: "Smoothie detox",
+                image: "https://images.unsplash.com/photo-1544145945-f90425340c7e?w=800&h=400&fit=crop",
+                time: "5 min",
+                difficulty: "Facile",
+                servings: "2 verres",
+                author: "Claire B.",
+                rating: "4.7",
+                likes: 167,
+                description: "Une boisson thérapeutische rafraîchissante aux fruits rouges et épinards, parfaite pour démarrer la journée.",
+                ingredients: [
+                    "150g de fruits rouges surgelés",
+                    "1 banane",
+                    "50g d'épinards frais",
+                    "250ml de lait d'amande",
+                    "1 cs de miel",
+                    "1 cs de graines de chia",
+                    "Glaçons"
+                ],
+                steps: [
+                    "Placez tous les ingrédients dans un blender.",
+                    "Mixez jusqu'à obtenir une consistance lisse.",
+                    "Ajoutez des glaçons si désiré.",
+                    "Mixez à nouveau.",
+                    "Versez dans des verres.",
+                    "Décorez avec des fruits frais.",
+                    "Servez immédiatement pour maximiser les nutriments."
+                ],
+                tips: [
+                    "Utilisez des fruits surgelés pour une texture glacée.",
+                    "Vous pouvez remplacer le lait d'amande par du lait de vache.",
+                    "Ajoutez de la protéine en poudre pour un smoothie plus énergétique."
+                ]
+            }
+        };
+
+        function openRecipeModal(recipeId) {
+            const recipe = recipes[recipeId];
+            if (!recipe) return;
+
+            const modalBody = document.querySelector('.modal-body-content');
+            modalBody.innerHTML = `
+                <img src="${recipe.image}" alt="${recipe.title}" class="recipe-detail-image">
+                <div class="recipe-detail-content">
+                    <div class="recipe-detail-header">
+                        <h2>${recipe.title}</h2>
+                        <div class="recipe-detail-meta">
+                            <span class="time"><i class="fas fa-clock"></i> ${recipe.time}</span>
+                            <span class="difficulty"><i class="fas fa-signal"></i> ${recipe.difficulty}</span>
+                            <span><i class="fas fa-users"></i> ${recipe.servings}</span>
+                            <span><i class="fas fa-user"></i> ${recipe.author}</span>
+                            <span><i class="fas fa-star"></i> ${recipe.rating}</span>
+                        </div>
+                    </div>
+                    <p style="color: var(--gray); margin-bottom: 1.5rem;">${recipe.description}</p>
+                    
+                    <div class="recipe-section">
+                        <h3><i class="fas fa-list-ul"></i> Ingrédients</h3>
+                        <ul class="ingredients-list">
+                            ${recipe.ingredients.map(ing => `<li>${ing}</li>`).join('')}
+                        </ul>
+                    </div>
+                    
+                    <div class="recipe-section">
+                        <h3><i class="fas fa-steps"></i> Instructions</h3>
+                        <ol class="steps-list">
+                            ${recipe.steps.map(step => `<li>${step}</li>`).join('')}
+                        </ol>
+                    </div>
+                    
+                    <div class="recipe-tips">
+                        <h4><i class="fas fa-lightbulb"></i> Astuces du chef</h4>
+                        <ul>
+                            ${recipe.tips.map(tip => `<li>${tip}</li>`).join('')}
+                        </ul>
+                    </div>
+                </div>
+            `;
+            
+            document.getElementById('recipeModal').style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            document.getElementById('recipeModal').style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        document.getElementById('recipeModal').addEventListener('click', function(e) {
+            if (e.target === this) closeModal();
+        });
+
+        document.querySelectorAll('.recipe-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const recipeId = this.getAttribute('onclick').match(/'([^']+)'/)[1];
+                openRecipeModal(recipeId);
+            });
+        });
+        const darkModeToggle = document.querySelector('.dark-mode-toggle');
+        const body = document.body;
+        
+        darkModeToggle.addEventListener('click', () => {
+            body.classList.toggle('dark-mode');
+            const icon = darkModeToggle.querySelector('i');
+            icon.classList.toggle('fa-moon');
+            icon.classList.toggle('fa-sun');
+        });
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+
+        const header = document.querySelector('header');
+        window.addEventListener('scroll', () => {
+            header.classList.toggle('scrolled', window.scrollY > 50);
+        });
+
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const recipeCards = document.querySelectorAll('.recipe-card');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                
+                const filter = btn.dataset.filter;
+                
+                recipeCards.forEach(card => {
+                    if (filter === 'all' || card.dataset.category === filter) {
+                        card.style.display = 'block';
+                        setTimeout(() => card.style.opacity = '1', 10);
+                    } else {
+                        card.style.opacity = '0';
+                        setTimeout(() => card.style.display = 'none', 300);
+                    }
+                });
+            });
+        });
+
+        const likeBtns = document.querySelectorAll('.like-btn');
+        likeBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                btn.classList.toggle('liked');
+                const icon = btn.querySelector('i');
+                if (btn.classList.contains('liked')) {
+                    icon.classList.remove('far');
+                    icon.classList.add('fas');
+                } else {
+                    icon.classList.remove('fas');
+                    icon.classList.add('far');
+                }
+            });
+        });
+
+        const followBtns = document.querySelectorAll('.btn-follow');
+        followBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                btn.textContent = btn.textContent === 'Suivre' ? 'Abonné' : 'Suivre';
+                btn.classList.toggle('following');
+            });
+        });
+
+        const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -50px 0px' };
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal-up').forEach(el => observer.observe(el));
+
+        const statNumbers = document.querySelectorAll('.stat-number[data-count]');
+        let statsAnimated = false;
+
+        const statsObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting && !statsAnimated) {
+                    statsAnimated = true;
+                    statNumbers.forEach(stat => {
+                        const target = parseInt(stat.dataset.count);
+                        const duration = 2000;
+                        const increment = target / (duration / 16);
+                        let current = 0;
+                        
+                        const updateNumber = () => {
+                            current += increment;
+                            if (current < target) {
+                                stat.textContent = Math.floor(current).toLocaleString();
+                                requestAnimationFrame(updateNumber);
+                            } else {
+                                stat.textContent = target.toLocaleString() + '+';
+                            }
+                        };
+                        
+                        updateNumber();
+                    });
+                }
+            });
+        }, { threshold: 0.5 });
+
+        document.querySelector('.stats-bar')?.querySelectorAll('.stat-number').forEach(stat => {
+            statsObserver.observe(stat.parentElement);
+        });
+
+        setTimeout(() => {
+            document.querySelectorAll('.fade-in').forEach(el => el.style.opacity = '1');
+        }, 100);
+    </script>
+</body>
+</html>
